@@ -22,3 +22,7 @@ body{
 .bigtxt{
     font-size: 4rem;
 }
+
+.greentxt{
+    color: green;
+}

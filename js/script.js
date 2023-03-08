@@ -23,7 +23,7 @@ const eta = parseInt(prompt('Adesso inserire età'));
 
 const euroKilometro = 0.21;
 
-// sconti
+// sconti (junior/senior)
 
 // junior
 const scontoJunior = 0.20;
@@ -35,18 +35,18 @@ const scontoSenior = 0.40;
 
 // messaggio prezzo finale totale
 
-let messPrezzoFinale = 'Il totale del tuo biglietto é di: €';
+let messPrezzoFinale = ' ';
 
-const saluti = 'Grazie per averci scelto.'
-
-
+// const saluti = 'Grazie per averci scelto.'
 
 
-if (!isNaN(numKilometri && eta) && (eta <= 110) ) {
+
+
+if (!isNaN(numKilometri && eta) && (eta <= 110) && (eta > 0) ) {
     if ( eta < 18) {
-       messPrezzoFinale += ((numKilometri * euroKilometro) - ((numKilometri * euroKilometro) * scontoJunior)).toFixed(2) + ' ' + saluti;
+       messPrezzoFinale += ((numKilometri * euroKilometro) - ((numKilometri * euroKilometro) * scontoJunior)).toFixed(2) ;
     } else if (eta >= 65) {
-       messPrezzoFinale += ((numKilometri * euroKilometro) - ((numKilometri * euroKilometro) * scontoSenior)).toFixed(2) + ' ' + saluti;
+       messPrezzoFinale += ((numKilometri * euroKilometro) - ((numKilometri * euroKilometro) * scontoSenior)).toFixed(2);
     } else if (eta >= 18 || eta <= 65) {
         messPrezzoFinale +=  (numKilometri * euroKilometro).toFixed(2);
        
@@ -58,11 +58,24 @@ if (!isNaN(numKilometri && eta) && (eta <= 110) ) {
 
 // messaggio che uscirá sulla pagina
 
-document.getElementById('totprice').innerHTML = `
-
-    <h1 class="text-center">${messPrezzoFinale}</h1>
+if (!isNaN(numKilometri && eta) && (eta <= 110) && (eta > 0) ) {
+   
+    document.getElementById('totprice').innerHTML = `
+   
+    <h1 class="text-center">Il totale del tuo biglietto é di: </h1>
+    <h1 class="text-center bigtxt">${messPrezzoFinale} €</h1>
+    <h2 class="text-center">Grazie per averci scelto.</h2>
+    <h2 class="text-center">Buon Viaggio!</h2> 
 
 `
+
+} else {
+    document.getElementById('totprice').innerHTML = `
+
+    <h1 class="text-center">${messPrezzoFinale}</h1>
+    `
+
+}
 
 console.log(messPrezzoFinale)
 

@@ -25,7 +25,41 @@ const euroKilometro = 0.21;
 
 // sconti
 
-cont
+// junior
+const scontoJunior = 0.20;
+
+
+// senior
+const scontoSenior = 0.40;
+
+
+
+// prezzo finale totale
+
+let messPrezzoFinale = "Il totale del tuo biglietto é: ";
+
+if (!isNaN(numKilometri && eta)) {
+    if ( eta < 18) {
+       messPrezzoFinale = (numKilometri * euroKilometro) - ((numKilometri * euroKilometro) * scontoJunior);
+    } else if (eta > 65) {
+       messPrezzoFinale = (numKilometri * euroKilometro) - ((numKilometri * euroKilometro) * scontoSenior);
+    } else if (eta >= 18 || eta <= 65) {
+        messPrezzoFinale =  numKilometri * euroKilometro
+       
+    }
+
+} else {
+    MessPrezzoFinale = 'Dati inseriti errati...Riprova!';
+}
+
+
+
+
+console.log(messPrezzoFinale)
+
+
+
+
 
 
 

@@ -1,0 +1,24 @@
+.debug{
+    border: 1px solid red;
+}
+
+.ticketbox{
+    width: 700px;
+    padding-top: 50px;
+    margin: 0 auto;
+    background-color: #6b2cd160;
+    box-shadow: 5px 5px 5px 5px #00000049;
+
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(180deg, #7F2CD1 0%, rgba(134, 58, 210, 0.921875) 0.01%, #1AA662 100%);
+    background-repeat:  no-repeat;
+    background-size: cover;
+}
+
+.bigtxt{
+    font-size: 4rem;
+}

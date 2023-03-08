@@ -33,27 +33,36 @@ const scontoJunior = 0.20;
 const scontoSenior = 0.40;
 
 
+// messaggio prezzo finale totale
 
-// prezzo finale totale
+let messPrezzoFinale = 'Il totale del tuo biglietto é di: €';
 
-let messPrezzoFinale = "Il totale del tuo biglietto é: ";
+const saluti = 'Grazie per averci scelto.'
 
-if (!isNaN(numKilometri && eta)) {
+
+
+
+if (!isNaN(numKilometri && eta) && (eta <= 110) ) {
     if ( eta < 18) {
-       messPrezzoFinale = (numKilometri * euroKilometro) - ((numKilometri * euroKilometro) * scontoJunior);
-    } else if (eta > 65) {
-       messPrezzoFinale = (numKilometri * euroKilometro) - ((numKilometri * euroKilometro) * scontoSenior);
+       messPrezzoFinale += ((numKilometri * euroKilometro) - ((numKilometri * euroKilometro) * scontoJunior)).toFixed(2) + ' ' + saluti;
+    } else if (eta >= 65) {
+       messPrezzoFinale += ((numKilometri * euroKilometro) - ((numKilometri * euroKilometro) * scontoSenior)).toFixed(2) + ' ' + saluti;
     } else if (eta >= 18 || eta <= 65) {
-        messPrezzoFinale =  numKilometri * euroKilometro
+        messPrezzoFinale +=  (numKilometri * euroKilometro).toFixed(2);
        
     }
 
 } else {
-    MessPrezzoFinale = 'Dati inseriti errati...Riprova!';
+    messPrezzoFinale = 'Arrrgh...dati inseriti errati. Riprova!';
 }
 
+// messaggio che uscirá sulla pagina
 
+document.getElementById('totprice').innerHTML = `
 
+    <h1 class="text-center">${messPrezzoFinale}</h1>
+
+`
 
 console.log(messPrezzoFinale)
 
